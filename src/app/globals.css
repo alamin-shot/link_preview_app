@@ -1,21 +1,329 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+* {
+	background: #444;
+	padding: 0;
+	margin: 0;
+}
+.link_preview_app {
+	height: 65vh;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.container {
+	width: 85%;
+	margin: 0 auto;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.head_title h1 {
+	background-color: #999;
+	color: #f8e5ac;
+	padding: 8px;
+	text-align: center;
+	font-size: 36px;
+}
+.form_section {
+	display: flex;
+	justify-content: center;
+	padding-top: 30px;
+}
+
+.input_section input {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	width: 300px;
+	padding: 15px;
+	font-size: 18px;
+	color: #ff7676;
+	border: 2px solid #777;
+	outline: none;
+	border-radius: 5px;
+	box-shadow: 0 4px 6px rgba(219, 219, 219, 0.2),
+		inset 0 4px 9px rgba(0, 0, 0, 0.7);
+}
+
+.form_section .btn {
+	display: flex;
+	justify-content: center;
+}
+.btn button {
+	margin-top: 15px;
+	background-color: #ff6347;
+	color: #fff;
+	padding: 12px 30px;
+	font-size: 18px;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+	transition: all 0.3s ease-in-out;
+}
+
+.btn button:hover {
+	background-color: #ff8265;
+	box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+	transform: translateY(-2px);
+}
+
+.btn button:active {
+	background-color: #e9543e;
+	transform: translateY(0);
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/*  */
+
+.preview {
+	display: flex;
+	justify-content: center;
+	padding: 20px;
+}
+
+.preview_card {
+	background-color: #555;
+	border-radius: 12px;
+	padding: 20px;
+	width: 220px;
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+	transition: all 0.3s ease-in-out;
+}
+
+.preview_card:hover {
+	box-shadow: 0 10px 18px rgba(0, 0, 0, 0.5);
+	transform: translateY(-5px);
+}
+
+.preview_title h1 {
+	background-color: #555;
+	font-size: 22px;
+	color: #f8e5ac;
+	text-align: center;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	margin-bottom: 10px;
+}
+.preview_image {
+	background-color: #555;
+}
+.preview_image img {
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+	margin-bottom: 15px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.preview_description h1 {
+	background-color: #555;
+	font-size: 16px;
+	color: #ddd;
+	text-align: center;
+	font-family: "Arial", sans-serif;
+}
+/*  */
+
+.info_section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px 10px;
+	border-radius: 12px;
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+	margin-top: 40px;
+	width: 65%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.info_logo {
+	font-size: 30px;
+	color: #f8e5ac;
+	background-color: #ff6347;
+	width: 50px;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	margin-right: 20px;
+}
+
+.info_details {
+	color: #ddd;
+	font-family: "Arial", sans-serif;
+	max-width: 500px;
+}
+
+.info_head h1 {
+	font-size: 24px;
+	color: #f8e5ac;
+	margin-bottom: 15px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.info_details p {
+	font-size: 16px;
+	line-height: 1.5;
+	color: #ccc;
+}
+
+.info_details span {
+	font-weight: bold;
+	color: #ff6347;
+}
+
+.info_details span span {
+	color: #f8e5ac;
+}
+
+/* Large devices (Desktops) */
+@media (min-width: 1024px) {
+	.container {
+		width: 70%; /* Adjust container width on larger screens */
+	}
+
+	.link_preview_app {
+		height: 65vh; /* Keep the same height for larger screens */
+	}
+
+	.info_section {
+		height: 20vh; /* 20% height for the info section */
+		margin-bottom: 10px;
+	}
+
+	.info_logo {
+		font-size: 30px;
+		width: 60px;
+		height: 60px;
+	}
+
+	.info_head h1 {
+		font-size: 26px;
+	}
+}
+
+/* Medium devices (Tablets) */
+@media (max-width: 1024px) and (min-width: 768px) {
+	.container {
+		width: 80%; /* Adjust container width for tablets */
+	}
+
+	.link_preview_app {
+		height: 65vh; /* Same height for tablets */
+	}
+
+	.info_section {
+		height: 30vh; /* Increase height of info section for tablets */
+	}
+
+	.info_logo {
+		font-size: 28px;
+		width: 50px;
+		height: 50px;
+	}
+
+	.info_head h1 {
+		font-size: 22px;
+	}
+
+	.preview_card {
+		width: 200px; /* Adjust preview card width */
+	}
+}
+
+/* Small devices (Phones) */
+@media (max-width: 768px) {
+	.container {
+		width: 90%; /* Adjust container width for mobile devices */
+	}
+
+	.link_preview_app {
+		height: 98vh; /* Reduce the height of the preview app on small screens */
+	}
+
+	.info_section {
+		padding: 10px;
+		width: 85%;
+		height: 40vh; /* Increase height of info section on small screens */
+		margin-top: 80px;
+		height: 95px;
+		margin-bottom: 10px;
+	}
+
+	.info_logo {
+		font-size: 25px;
+		width: 35px;
+		height: 35px;
+	}
+
+	.info_head h1 {
+		font-size: 16px;
+	}
+	.info_details p {
+		font-size: 12px;
+	}
+	.preview_card {
+		width: 180px; /* Reduce the preview card width */
+	}
+	.preview_image {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.preview_image img {
+		height: 120px;
+		width: 120px;
+	}
+	.preview_description h1 {
+		font-size: 14px;
+	}
+	/* Stack the preview card elements for mobile */
+	.preview {
+		flex-direction: column;
+		align-items: center;
+	}
+}
+
+/* Very small devices (Extra small phones) */
+@media (max-width: 480px) {
+	.container {
+		width: 95%; /* Full width for very small screens */
+	}
+
+	.link_preview_app {
+		height: 93vh; /* Further reduce the preview app height */
+	}
+
+	.info_section {
+		height: 18vh; /* Increase the height for info section */
+		width: 85%;
+	}
+	.preview_image {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.preview_image img {
+		width: 60%;
+		height: 80px;
+	}
+	.info_logo {
+		font-size: 22px;
+		width: 40px;
+		height: 40px;
+	}
+
+	.info_head h1 {
+		font-size: 18px;
+	}
+
+	.preview_card {
+		width: 160px; /* Further reduce the preview card width */
+	}
+
+	/* Stack the content vertically for very small screens */
+	.form_section {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.btn button {
+		width: 100%;
+		padding: 15px;
+	}
 }
